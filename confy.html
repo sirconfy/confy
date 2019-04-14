@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<tittle>Birthday </title>
+
+<style>
+h1  { color: orange; font-size:45px;}
+  
+img{border-radius:50%; width:180px; height:250px; 
+margin-left: auto;
+  margin-right: auto; }
+
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizingV: border-box;
+}
+     .comment {
+      width: 40%;
+      height: 100px;
+      padding: 10px;
+      background-color: #d0e2bc;
+      font: ;
+      color: #095484;
+      }
+ .myFunction(){
+    position: absolute;
+    top: 80px;
+    right: 50%;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+    
+}
+.center {
+  margin: auto;
+  width: 80%;
+  border: 3px solid #73AD21;
+  padding: 10px; 
+}
+.p2{ 
+text-align: right;
+} 
+
+.p2 img{ width:70px; height:70px; margin-right: 20px; }
+
+
+  
+</style>
+
+</head>
+<body>
+    
+<div class="center">
+     <h1><b><strong> <marquee behaviour = right> YEAH! IT'S OFFICIALLY MY DAY. HAPPY BIRTHDAY TO ME, MYSELF & I !!! </marquee></strong> </b> </h1>
+
+    <img src="birthday.jpg">
+
+<h2>ABOUT THE BIRTHDAY GUY </h2>
+
+<p1>
+<a href="" class="typewrite" data-period="20000" data-type='[ "I am Chidi Confidence Obumneke(ENGR).<br> A graduate of Civil Engineering from the University of Nigeria Nsukka (UNN).<br> I am too passionate about Gods kingdom enlargement. I am a person who is too positive about every aspect of life.There are so many things I love to do: I always wanted to be a great keyboardist like WARREN. I also wanted to be a good developer. I am no where close to these,yet. I am just someone who does some research, playing and doing some coding. But my dream is still alive. " ]'>
+<span class="wrap"></span>
+</a>
+</p1>
+
+<hr size="5">
+	
+
+<h3> <b>I am glad to see you here.For your birthday wishes comment bellow.</b></h3>
+
+
+
+  <form action= "https://wa.me/2347062116518="post">
+    <input
+type ="number"name = "pnum"placeholder = "enter your phone number"><br><br>
+	<textarea class="comment"> Type your comment here.</textarea>
+ "     <br>
+<button onclick="myFunction()">Send</button>
+</form>
+ <br><br>
+<div class="p2">
+<a href="mailto:csirconfy@gmail.com       ?subject=Message from website" target='blank'> <img src="/images/social-media-icons/mail.png" alt="Mail" /> </a>   &nbsp  &nbsp 
+ <a href="https://www.facebook.com/confidece.chidi" target='blank'> <img src="/images/social-media-icons/facebook.png" alt="Facebook" /> </a>  &nbsp &nbsp 
+ <a href= "@ConfySir"target='blank'> <img src="/images/social-media-icons/twitter.png" alt="Twitter" /> </a>
+</div>
+
+
+ <script>
+
+var TxtType = function(el, toRotate, period) {
+this.toRotate = toRotate;
+this.el = el;
+this.loopNum = 0;
+this.period = parseInt(period, 10) || 20000;
+this.txt = '';
+this.tick();
+this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+var i = this.loopNum % this.toRotate.length;
+var fullTxt = this.toRotate[i];
+
+if (this.isDeleting) {
+this.txt = fullTxt.substring(0, this.txt.length - 1);
+} else {
+this.txt = fullTxt.substring(0, this.txt.length + 1);
+}
+
+this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+var that = this;
+var delta = 200 - Math.random() * 100;
+
+if (this.isDeleting) { delta /= 2; }
+
+if (!this.isDeleting && this.txt === fullTxt) {
+delta = this.period;
+this.isDeleting = true;
+} else if (this.isDeleting && this.txt === '') {
+this.isDeleting = false;
+this.loopNum++;
+delta = 500;
+}
+
+setTimeout(function() {
+that.tick();
+}, delta);
+};
+
+window.onload = function() {
+var elements = document.getElementsByClassName('typewrite');
+for (var i=0; i<elements.length; i++) {
+var toRotate = elements[i].getAttribute('data-type');
+var period = elements[i].getAttribute('data-period');
+if (toRotate) {
+new TxtType(elements[i], JSON.parse(toRotate), period);
+}
+}
+
+var css = document.createElement("style");
+css.type = "text/css";
+css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+document.body.appendChild(css);
+};
+
+
+
+
+</script>
+<script>
+	
+function myFunction() {
+  alert("Thanks for your wishies!");
+  }
+</script>
+<script>
+	
+	$(document).ready(function () {
+
+  $("[type = submit]").click(function () {
+
+    var lang    = $("select").val();
+
+    var comment = $("[type = text]").val();
+
+    $("<p lang=" + lang + ">" + comment + "</p>").appendTo("body");
+
+  });
+  
+  </script>
+
+</div>
+
+</body>
+
+</html>
